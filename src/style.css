@@ -1,0 +1,253 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: rgb(102,162,233);
+    background: radial-gradient(circle, rgba(102,162,233,1) 0%, rgba(28,134,56,0.07) 100%);
+    color: #212121;
+    line-height: 1.5;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    border: 1px solid #0d161b;
+    border-radius: 5px;
+}
+
+.is-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.search-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0 20px 0;
+    background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(189,253,45,1) 100%);
+    box-shadow: 2px 10px 8px 0px rgba(53, 221, 179, 0.68);
+        -webkit-box-shadow: 2px 10px 8px 0px rgba(99, 214, 147, 0.68);
+        -moz-box-shadow: 2px 10px 8px 0px rgba(59, 112, 109, 0.68);
+}
+
+.glow-hover {
+    width: 300px;
+    height: 40px;
+    padding: 5px 5px 5px 15px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+}
+.glow-hover:hover {
+    width: 300px;
+    height: 40px;
+    padding: 5px 5px 5px 15px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    color: #160920;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 15px;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #c360f1;
+}
+
+.glow-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-hover:active {
+    color: #60f1b9
+}
+
+.glow-hover:active:after {
+    background: transparent;
+}
+
+.glow-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #60f1b9;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+button:hover,
+button:focus {
+    background-color: #60f1b9;
+}
+.glow-on-hover {
+    width: 140px;
+    height: 40px;
+    border: none;
+    outline: none;
+    color: #160920;
+    background: #60f1b9;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 15px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #60f1b9
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+.glow-on-hover:hover:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #60f1b9;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.gallery {
+    margin-top: 90px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,253,224,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+.photo-card {
+    background: rgb(255,0,172);
+    background: linear-gradient(90deg, rgba(255,0,172,0.4990371148459384) 0%, rgba(29,253,224,0.4654236694677871) 50%, rgba(79,252,69,0.4990371148459384) 100%);
+    border: 1px solid #d001fa;
+    border-radius: 25px;    
+    padding: 20px;
+}
+.img_wrap:hover{
+    -webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	transform: scale(1.2);
+}
+.img_wrap {
+    height: 280px;
+    display: flex;
+    align-items: center;
+}
+
+.gallery_link {
+    display: block;
+    text-decoration: none;
+}
+
+.load-more {
+    margin: 40px auto;
+    width: 200px;
+    background-color: #eff160;
+}
+
+input {
+    width: 300px;
+    height: 40px;
+    padding: 5px 5px 5px 15px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
